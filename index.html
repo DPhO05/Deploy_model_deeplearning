@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vẽ số và Dự đoán</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      cursor: crosshair;
+      background-color: black;  /* Nền đen */
+    }
+    * {
+      font-family: 'Courier New', Courier, monospace;
+    }
+    
+    /* body {
+      background-image: url("./toji.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+    }  */
+    
+  
+    #probabilities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 10px;
+      width: 300px; /*Điều chỉnh theo ý muốn*/
+      margin-top: 20px;
+    }
+  
+    .probability-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 30px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      color: #fff; /* Màu chữ trắng */
+    }
+  
+    .probability-box span {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  
+    .probability-box p {
+      margin: 5px 0 0;
+    }
+
+    .btn {
+      padding: 10px;
+      margin: 4px;
+      border-radius: 10px;
+      background-color: rgb(102, 202, 102);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  </style>
+  
+</head>
+<body style="display: flex;
+    width: 100%; align-items: center;
+    justify-content: space-around;">
+  <div style="display: flex; flex-direction: column;">
+    <h1 style="text-align: center;">Handwriting Digit Prediction</h1>
+    <canvas id="drawingCanvas" width="500" height="500" style="border-radius: 20px;"></canvas><br>
+    <button id="clearButton" class="btn">Delete</button>
+    <button id="predictButton" class="btn">Predict</button>
+  </div>
+  <div>
+    <p id="result">Results will be shown here.</p>
+    <p id ="result">Probability of each number gained</p>
+    <div id="probabilities-grid"></div>
+  </div>
+
+  <!-- Liên kết với script.js -->
+  <script src="script.js"></script>
+</body>
+</html>
